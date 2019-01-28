@@ -4,7 +4,7 @@
 # FILL THESE COMMENTS IN
 #*****************************************
 # YOUR NAME: Brett Silverberg
-# NUMBER OF HOURS TO COMPLETE:  (please track how long this homework takes you to complete).
+# NUMBER OF HOURS TO COMPLETE:  idk maybe like 3 or 4
 # YOUR COLLABORATION STATEMENT(s) (refer to syllabus):
 #
 #*****************************************
@@ -24,46 +24,50 @@ import math #This line allows you to use math functions. Importantly, math.sqrt(
 
 
 def intersectionoftwolines_x(m1, b1, m2, b2):
-    # Calculate x for the point where two equations:
-    # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
-
-    x = 0 #replace this with your calculation for x
+    x = (b2 - b1) / (m1 - m2)
     return x
 
 def intersectionoftwolines_y(m1, b1, m2, b2):
-    # Calculate y for the point where two equations:
-    # y = (m1 * x) + b1 and y = (m2 * x) + b2 intersect.
 
-
-    y = 0 #replace this with your calculation for y
+    y = (m1 * ((b2 - b1) / (m1 - m2))) + b1
     return y
 
 
 def distancebetweenpoints(x1, y1, x2, y2):
-    # Calculate the linear distance between two points
-    # (x1, y1) and (x2, y2).
 
+    xdist = x2 - x1
+    ydist = y2 - y1
 
-    distance = 0 # replace with your calculation for distance
+    distance = math.sqrt((xdist ** 2) + (ydist ** 2)) # replace with your calculation for distance
     return distance
 
 def heronsformula(a, b, c):
-    # Calculate the area of a triangle with three known side lengths.
-    # You may want to look up Heron's formula online.
+
+    S = (a + b + c) / 2
 
 
-
-    area = 0 #replace this with your calculation for area
+    area = math.sqrt(S * (S - a) * (S - b) * (S - c)) #replace this with your calculation for area
     return area
 
 def areaofatriangle(m1, b1, m2, b2, m3, b3):
-    #Using the three functions above, now calculate the area of a
-    #triangle when the three sides are described by three linear equations
-    #y = (m1 * x) + b1;  y = (m2 * x) + b2; and y = (m3 * x) + b3
 
+    x1 = (b2 - b1) / (m1 - m2)
+    y1 = (m1 * ((b2 - b1) / (m1 - m2))) + b1
 
-    area = 0 #replace this with your calculation for area
+    x2 = (b3 - b2) / (m2 - m3)
+    y2 = (m2 * ((b3 - b2) / (m2 - m3))) + b2
+
+    x3 = (b3 - b1) / (m1 - m3)
+    y3 = (m3 * ((b3 - b1) / (m1 - m3))) + b3
+
+    side1 = math.sqrt(((x2 - x1) ** 2) + ((y2 - y1) ** 2))
+    side2 = math.sqrt(((x3 - x1) ** 2) + ((y3 - y1) ** 2))
+    side3 = math.sqrt(((x3 - x2) ** 2) + ((y3 - y2) ** 2))
+
+    S = (side1 + side2 + side3) / 2
+
+    area = math.sqrt(S * (S - side1) * (S - side2) * (S - side3))
     return area
 
 
