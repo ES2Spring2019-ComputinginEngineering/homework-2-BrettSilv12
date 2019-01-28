@@ -5,7 +5,7 @@
 #*****************************************
 # YOUR NAME: Brett Silverberg
 # NUMBER OF HOURS TO COMPLETE:  idk maybe like 3 or 4
-# YOUR COLLABORATION STATEMENT(s) (refer to syllabus):
+# YOUR COLLABORATION STATEMENT(s) (refer to syllabus): I worked alone on this assignment, except for looking up what heron's formula was.
 #
 #*****************************************
 
